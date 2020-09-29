@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="columns">
+    <div class="column col-4 col-sm-12 col-mx-auto col-auto">
+      <div class="card main">
+        <div class="card-image">
+          <a target="_blank" rel="noopener noreferrer" href=<%= image["url"].to_s %>>
+            <%= "<img src=\"" + image["url"].to_s + "\" class=\"img-responsive rose-img\">"%>
+          </a>
+        </div>
+        <div class="card-body">
+          <span class="chip">#<%= image["id"] %></span>
+          <span class="chip"><%= image["artist"] %></span>
+          <span class="chip"><%= image["total"] %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

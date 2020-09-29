@@ -1,0 +1,126 @@
+<div class="container">
+  <div class="columns">
+    <div class="column col-4 col-sm-12 col-mx-auto col-auto">
+      <h1>API Docs</h1>
+      <h5>Types</h5>
+      <div class="chips">
+        <%= CHIPS.map_with_index { |x, i| "<span class=\"chip types\">" + x + "</span>" + (i % 7 == 6 ? "<br/>" : "") }.join(" ")%>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title h5"><span class="label label-rounded rest">GET</span> /api/:type</div>
+        </div>
+        <div class="card-body">
+          <i>Returns a random image of the provided type</i><br/><br/>
+          <span class="label label-warning">Example</span> <code>/api/bara</code><br/><br/>
+          <span class="label label-success">200</span><br/>
+          <pre class="code" data-lang="json">
+{
+    "url": "https://i.imgur.com/ZgwkLqO.jpg",
+    "artist": "@twitter_tag",
+    "id": "5f6e49e26d83a38632f5c9ad",
+    "total": 6000
+}</pre><br/>
+          <span class="label label-error">400/401/403/404</span><br/>
+          <pre class="code" data-lang="json">
+{
+    "error": "..."
+}</pre>
+        </div>
+      </div><br/>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title h5"><span class="label label-rounded rest">GET</span> /api/:type/:id</div>
+        </div>
+        <div class="card-body">
+          <i>Returns the image of the provided id and type</i><br/><br/>
+          <span class="label label-warning">Example</span> <code>/api/bara/5f6e49e26d83a38632f5c9ad</code><br/><br/>
+          <span class="label label-success">200</span><br/>
+          <pre class="code" data-lang="json">
+{
+    "url": "https://i.imgur.com/ZgwkLqO.jpg",
+    "artist": "@twitter_tag",
+    "id": "5f6e49e26d83a38632f5c9ad",
+    "total": 6000
+}</pre><br/>
+          <span class="label label-error">400/401/403/404</span><br/>
+          <pre class="code" data-lang="json">
+{
+    "error": "..."
+}</pre>
+        </div>
+      </div><br/>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title h5">Response types</div>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>url</td>
+                <td>String</td>
+              </tr>
+              <tr>
+                <td>artist</td>
+                <td>String</td>
+              </tr>
+              <tr>
+                <td>id</td>
+                <td>String</td>
+              </tr>
+              <tr>
+                <td>total</td>
+                <td>Int32</td>
+              </tr>
+              <!-- <tr>
+                <td>uploader</td>
+                <td>String</td>
+              </tr> -->
+              <tr>
+                <td>error</td>
+                <td>String</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><br/>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title h5">API Wrappers</div>
+        </div>
+        <div class="card-body">
+          <div class="filter">
+            <input type="radio" id="tag-0" class="filter-tag" name="filter-radio" hidden checked>
+            <%= temp = [] of String; WRAPPERS.keys.size.times {|x| temp << "<input type=\"radio\" id=\"tag-" + (x + 1).to_s + "\" class=\"filter-tag\" name=\"filter-radio\" hidden>" }; temp.join("") %>
+            <div class="filter-nav">
+              <label class="chip" for="tag-0">All</label>
+              <%= WRAPPERS.keys.map_with_index {|x, y| "<label class=\"chip\" for=\"tag-" + (y + 1).to_s + "\">" + x + "</label>" }.join(" ")%>
+            </div>
+            <div class="filter-body">
+              <%= x = 0; temp_2 = [] of String
+                  WRAPPERS.each {|y, z| 
+                    z.each {|f|
+                      temp_2 << "<div class=\"filter-item card\" data-tag=\"tag-" + (x + 1).to_s + "\">
+                        <div class=\"card-header\">
+                          <div class=\"card-title text-bold\"><a href=\"https://github.com/" + f + "\">" + f + "</a></div>
+                          <div class=\"card-subtitle\">" + y + "</div>
+                        </div>
+                      </div>"
+                    }
+                    x += 1;
+                  }
+                  temp_2.join("") %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

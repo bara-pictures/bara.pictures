@@ -1,0 +1,23 @@
+name: bara_pictures
+version: 0.1.0
+
+authors:
+  - GeopJr <geopjr@geopjr.xyz>
+
+targets:
+  bara_pictures:
+    main: src/bara_pictures.cr
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+    branch: master
+  moongoon:
+    github: elbywan/moongoon
+    branch: master
+  dotenv:
+    github: gdotdesign/cr-dotenv
+
+crystal: 0.35.1
+
+license: AGPLv3

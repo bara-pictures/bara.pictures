@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %> 💪</title>
+    <meta name="description" content="Bara as a Service">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="css/rose.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- APPLE -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="bara.pictures">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <!-- FAVICONS -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#5bbad5">
+    <!-- OG -->
+    <meta property="og:description" content="Bara as a Service">
+    <meta property="og:title" content="bara.pictures">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bara.pictures/">
+    <meta name="og:image" content="https://i.imgur.com/8uIUErO.png">
+    <meta property="og:image:type" content="image/png">
+  </head>
+  <body>
+    <div class="modal" id="modal-menu">
+      <a href="#close" class="modal-overlay" aria-label="Close"></a>
+      <div class="modal-container">
+        <div class="modal-header">
+          <a href="#close" class="btn btn-clear float-right" aria-label="Close"></a>
+          <div class="modal-title h5 text-secondary">MENU</div>
+        </div>
+        <div class="modal-body">
+          <div class="content">
+            <div class="divider-vert" data-content="General"></div>
+            <a href="/" class="btn">New Image</a>
+            <a href="/takedown" class="btn">Takedown</a>
+            <a href="/api" class="btn">API</a>
+            <div class="divider-vert" data-content="Other"></div>
+            <a href="https://granz.geopjr.xyz/" class="btn">Discord Bot</a>
+            <a href="/soon" class="btn">Android App</a>
+            <div class="divider-vert" data-content="Contact"></div>
+            <a href="https://github.com/bara-pictures" class="btn">GitHub</a>
+            <a href="https://ko-fi.com/GeopJr" class="btn">Ko-Fi</a>
+            <a href="https://discord.gg/7XQNZGq" class="btn">Discord Guild</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="navbar">
+      <section class="navbar-section">
+        <a href="/" class="navbar-brand mr-2 ml-2">bara.pictures</a>
+        <div class="btn-group btn-group-block mob-hide">
+          <a href="/" class="btn">Random Image</a>
+          <a href="/takedown" class="btn">Takedown</a>
+          <a href="/api" class="btn">API</a>
+        </div> 
+      </section>
+      <section class="navbar-section mr-2">
+        <div class="btn-group btn-group-block mob-hide">
+          <a href="https://github.com/bara-pictures" class="btn">GitHub</a>
+          <a href="https://ko-fi.com/GeopJr" class="btn">Ko-Fi</a>
+          <a href="https://discord.gg/7XQNZGq" class="btn">Discord Guild</a>
+        </div>
+        <div class="dropdown dropdown-right ml-2 mob-hide">
+          <a class="btn btn dropdown-toggle" tabindex="0">
+            Other <i class="icon icon-caret"></i>
+          </a>
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="https://granz.geopjr.xyz/">
+                <i class="icon icon-message"></i> Discord Bot
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="/soon">
+                <i class="icon icon-apps"></i> Android App
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a href="#modal-menu" class="btn modal-men-btn"><i class="icon icon-menu"></i></a>
+      </section>
+    </header>
+    <div class="spacer"></div>
+      <%= content %>
+    <div class="spacer"></div>
+    <footer>   
+      Made with <i class="icon-w-crystal"></i> by <a href="https://geopjr.xyz/">GeopJr</a>
+    </footer>
+  </body>
+</html>
